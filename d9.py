@@ -33,21 +33,17 @@ def os_walk_read_file(file_to_search, pattern):
         
         if match:
             numbers_found += 1
-            print(f'{file_to_search.name} \t {match.group()}')
+            print(f'{file_to_search.name:<20}{match.group():<20}')
         
         
-        
-    
 unpack_archive_shutil()
-# read_file()
-# os_walk_read_file(file_path, pattern)
 
 current_date = datetime.datetime.now().strftime("%d-%m-%y")
 
 print(f'Search date: {current_date}\n')
 
-print('FILE\t\tSERIAL NO.')
-print('----\t\t----')
+print(f'{"FILE":<20} {"SERIAL NO.":<20}')
+print(f'{"----":<20} {"----------":<20}')
 
 
 search_start = time.time()
@@ -65,5 +61,5 @@ search_end = time.time()
 running_time = search_end - search_start
 duration = math.ceil(running_time)
 
-print(f'Numbers found: {numbers_found}')
-print(f'It took {duration} second/s')
+print(f'\nNumbers found: {numbers_found}')
+print(f'It took {duration} second/s\n')
